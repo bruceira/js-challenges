@@ -32,7 +32,7 @@ const quizData = [
     correct: "b",
   },
 ];
-
+const quiz = document.getElementById("quiz")
 const answerEl = document.querySelectorAll(".answer")
 const question = document.getElementById("question")
 const a_text = document.getElementById("a_text")
@@ -85,10 +85,12 @@ btn.addEventListener("click", () => {
       score++
     }
     currentQuiz++
+
     if (currentQuiz < quizData.length) {
       quizApp()
     } else {
-      alert("Done")
+      quiz.innerHTML = `<h2>you answered  correctly at ${score} / ${quizData.length} questions .</h2>
+      <button onClick=location.reload()>Reload</button>`
     }
 
   }
